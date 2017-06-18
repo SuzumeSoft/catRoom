@@ -14,6 +14,15 @@ public class CommentTestController {
     @Autowired
     private ICommentRepository commentRepository;
 
+    @RequestMapping("registtest")
+    public ModelAndView RegistTest(){
+        List<MessageEntity> messages = commentRepository.findAll();
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("messages", messages);
+        modelAndView.setViewName("commenttest");
+        return modelAndView;
+    }
+
     @RequestMapping("commenttest")
     public ModelAndView CommentTest(){
         List<MessageEntity> messages = commentRepository.findAll();
