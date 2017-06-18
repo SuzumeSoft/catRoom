@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+    <form action="/registTest">
+        <input type="text" name="comment" />
+        <input type="submit" />
+    </form>
+    <table>
+        <tr th:each="message : ${messages}">
+            <td th:text="${message.id}"></td>
+            <td th:text="${message.message}"></td>
+        </tr>
+    </table>
+</body>
+</html>
